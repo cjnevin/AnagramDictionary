@@ -11,17 +11,11 @@ import Foundation
 public typealias Anagrams = [String]
 public typealias Words = [String: Anagrams]
 
-protocol AnagramHashable {
-    func hashValue(word: String) -> String
+internal func hashValue(word: String) -> String {
+    return String(word.characters.sort())
 }
 
-extension AnagramHashable {
-    func hashValue(word: String) -> String {
-        return String(word.characters.sort())
-    }
-}
-
-public struct AnagramDictionary: AnagramHashable {
+public struct AnagramDictionary {
     private let words: Words
     
     /// - letters: Letters to use in anagrams (including fixed letters).
@@ -67,7 +61,7 @@ public struct AnagramDictionary: AnagramHashable {
     }
 }
 
-public class AnagramBuilder: AnagramHashable {
+public class AnagramBuilder {
     private var words = Words()
     
     public convenience init(words: Words) {
