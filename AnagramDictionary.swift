@@ -8,8 +8,8 @@
 
 import Foundation
 
-typealias Anagrams = [String]
-typealias Words = [String: Anagrams]
+public typealias Anagrams = [String]
+public typealias Words = [String: Anagrams]
 
 protocol AnagramHashable {
     func hashValue(word: String) -> String
@@ -21,32 +21,28 @@ extension AnagramHashable {
     }
 }
 
-struct AnagramDictionary: AnagramHashable {
+public struct AnagramDictionary: AnagramHashable {
     private let words: Words
     
-    subscript(letters: String) -> Anagrams? {
+    /// - letters: Letters to use in anagrams (including fixed letters).
+    /// - returns: Anagrams for provided the letters.
+    public subscript(letters: String) -> Anagrams? {
         return words[hashValue(letters)]
-    }
-    
-    static func deserialize(data: NSData) -> AnagramDictionary {
-        // TODO: Handle failure
-        let words = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Words
-        return AnagramDictionary(words: words)
     }
     
     /// - letters: Letters to use in anagrams (including fixed letters).
     /// - fixedLetters: Index-Character dictionary for all spots that are currently filled.
     /// - returns: Anagrams for provided the letters where fixed letters match and remaining letters.
-    func anagrams(letters: String, fixedLetters: [Int: Character]? = nil) -> Anagrams? {
+    public subscript(letters: String, fixedLetters: [Int: Character]) -> Anagrams? {
         var remaining: [Character] = Array(letters.characters)
         // Remove fixed letters from remaining (starting at end)
-        fixedLetters?.keys.sort({ $0 > $1 }).forEach { (index) in
+        fixedLetters.keys.sort({ $0 > $1 }).forEach { (index) in
             remaining.removeAtIndex(index)
         }
         return self[letters]?.filter({ word in
             var remainingForWord = remaining
             for (index, char) in Array(word.characters).enumerate() {
-                if let fixed = fixedLetters?[index] {
+                if let fixed = fixedLetters[index] {
                     if char != fixed {
                         return false
                     }
@@ -63,24 +59,30 @@ struct AnagramDictionary: AnagramHashable {
             return true
         })
     }
+    
+    public static func deserialize(data: NSData) -> AnagramDictionary {
+        // TODO: Handle failure
+        let words = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Words
+        return AnagramDictionary(words: words)
+    }
 }
 
-class AnagramBuilder: AnagramHashable {
-    var words = Words()
+public class AnagramBuilder: AnagramHashable {
+    private var words = Words()
     
-    convenience init(words: Words) {
+    public convenience init(words: Words) {
         self.init()
         self.words = words
     }
     
-    func addWord(word: String) {
+    public func addWord(word: String) {
         let hash = hashValue(word)
         var existing = words[hash] ?? []
         existing.append(word)
         words[hash] = existing
     }
     
-    func serialize() -> NSData {
+    public func serialize() -> NSData {
         return try! NSJSONSerialization.dataWithJSONObject(words, options: NSJSONWritingOptions(rawValue: 0))
     }
     
