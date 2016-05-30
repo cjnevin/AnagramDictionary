@@ -15,20 +15,30 @@ internal func hashValue(word: String) -> String {
     return String(word.characters.sort())
 }
 
+internal func hashValue(characters: [Character]) -> String {
+    return String(characters.sort())
+}
+
 public struct AnagramDictionary {
     private let words: Words
     
     /// - letters: Letters to use in anagrams (including fixed letters).
     /// - returns: Anagrams for provided the letters.
     public subscript(letters: String) -> Anagrams? {
+        return self[Array(letters.characters)]
+    }
+    
+    /// - letters: Letters to use in anagrams (including fixed letters).
+    /// - returns: Anagrams for provided the letters.
+    public subscript(letters: [Character]) -> Anagrams? {
         return words[hashValue(letters)]
     }
     
     /// - letters: Letters to use in anagrams (including fixed letters).
     /// - fixedLetters: Index-Character dictionary for all spots that are currently filled.
     /// - returns: Anagrams for provided the letters where fixed letters match and remaining letters.
-    public subscript(letters: String, fixedLetters: [Int: Character]) -> Anagrams? {
-        var remaining: [Character] = Array(letters.characters)
+    public subscript(letters: [Character], fixedLetters: [Int: Character]) -> Anagrams? {
+        var remaining = letters
         // Remove fixed letters from remaining (starting at end)
         fixedLetters.keys.sort({ $0 > $1 }).forEach { (index) in
             remaining.removeAtIndex(index)
@@ -52,6 +62,13 @@ public struct AnagramDictionary {
             }
             return true
         })
+    }
+    
+    /// - letters: Letters to use in anagrams (including fixed letters).
+    /// - fixedLetters: Index-Character dictionary for all spots that are currently filled.
+    /// - returns: Anagrams for provided the letters where fixed letters match and remaining letters.
+    public subscript(letters: String, fixedLetters: [Int: Character]) -> Anagrams? {
+        return self[Array(letters.characters), fixedLetters]
     }
     
     public static func deserialize(data: NSData) -> AnagramDictionary {
