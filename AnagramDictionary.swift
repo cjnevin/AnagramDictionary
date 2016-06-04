@@ -38,26 +38,18 @@ public struct AnagramDictionary {
     /// - fixedLetters: Index-Character dictionary for all spots that are currently filled.
     /// - returns: Anagrams for provided the letters where fixed letters match and remaining letters.
     public subscript(letters: [Character], fixedLetters: [Int: Character]) -> Anagrams? {
-        var remaining = letters
-        // Remove fixed letters from remaining (starting at end)
-        fixedLetters.keys.sort({ $0 > $1 }).forEach { (index) in
-            remaining.removeAtIndex(index)
-        }
         return self[letters]?.filter({ word in
-            var remainingForWord = remaining
+            var remainingForWord = letters
             for (index, char) in Array(word.characters).enumerate() {
-                if let fixed = fixedLetters[index] {
-                    if char != fixed {
-                        return false
-                    }
+                if let fixed = fixedLetters[index] where char != fixed {
+                    return false
+                }
+                if let firstIndex = remainingForWord.indexOf(char) {
+                    // Remove from pool, word still appears to be valid
+                    remainingForWord.removeAtIndex(firstIndex)
                 } else {
-                    if let firstIndex = remainingForWord.indexOf(char) {
-                        // Remove from pool, word still appears to be valid
-                        remainingForWord.removeAtIndex(firstIndex)
-                    } else {
-                        // We ran out of viable letters for this word
-                        return false
-                    }
+                    // We ran out of viable letters for this word
+                    return false
                 }
             }
             return true
