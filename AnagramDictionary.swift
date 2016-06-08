@@ -63,10 +63,18 @@ public struct AnagramDictionary {
         return self[Array(letters.characters), fixedLetters]
     }
     
-    public static func deserialize(data: NSData) -> AnagramDictionary {
-        // TODO: Handle failure
-        let words = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Words
+    public static func deserialize(data: NSData) -> AnagramDictionary? {
+        guard let words = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Words else {
+            return nil
+        }
         return AnagramDictionary(words: words)
+    }
+    
+    public static func load(path: String) -> AnagramDictionary? {
+        guard let data = NSData(contentsOfFile: path) else {
+            return nil
+        }
+        return AnagramDictionary.deserialize(data)
     }
 }
 
