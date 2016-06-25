@@ -63,6 +63,10 @@ public struct AnagramDictionary {
         return self[Array(letters.characters), fixedLetters]
     }
     
+    public func lookup(word: String) -> Bool {
+        return self[word.characters.sort()]?.contains(word) ?? false
+    }
+    
     public static func deserialize(data: NSData) -> AnagramDictionary? {
         guard let words = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Words else {
             return nil
@@ -75,6 +79,19 @@ public struct AnagramDictionary {
             return nil
         }
         return AnagramDictionary.deserialize(data)
+    }
+    
+    public init?(filename: String, type: String = "bin", bundle: NSBundle = .mainBundle()) {
+        guard let
+            anagramPath = bundle.pathForResource(filename, ofType: type),
+            anagramDictionary = AnagramDictionary.load(anagramPath) else {
+            return nil
+        }
+        self = anagramDictionary
+    }
+    
+    init(words: Words) {
+        self.words = words
     }
 }
 
