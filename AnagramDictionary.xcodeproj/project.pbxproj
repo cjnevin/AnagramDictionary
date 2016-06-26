@@ -11,6 +11,8 @@
 		99127A641D1FBEFD009DCF7A /* AnagramDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99127A591D1FBEFD009DCF7A /* AnagramDictionary.framework */; };
 		99127A691D1FBEFD009DCF7A /* AnagramDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99127A681D1FBEFD009DCF7A /* AnagramDictionaryTests.swift */; };
 		99127A741D1FBF2C009DCF7A /* AnagramDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */; };
+		991AE4861D1FCAEF001C98E4 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 991AE4851D1FCAEF001C98E4 /* test.txt */; };
+		991AE4881D1FD028001C98E4 /* test.bin in Resources */ = {isa = PBXBuildFile; fileRef = 991AE4871D1FD028001C98E4 /* test.bin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		99127A6A1D1FBEFD009DCF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnagramDictionary.swift; sourceTree = SOURCE_ROOT; };
 		991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lookup.xcodeproj; path = Lookup/Lookup.xcodeproj; sourceTree = SOURCE_ROOT; };
+		991AE4851D1FCAEF001C98E4 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		991AE4871D1FD028001C98E4 /* test.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = test.bin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				99127A681D1FBEFD009DCF7A /* AnagramDictionaryTests.swift */,
+				991AE4871D1FD028001C98E4 /* test.bin */,
+				991AE4851D1FCAEF001C98E4 /* test.txt */,
 				99127A6A1D1FBEFD009DCF7A /* Info.plist */,
 			);
 			path = AnagramDictionaryTests;
@@ -243,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991AE4881D1FD028001C98E4 /* test.bin in Resources */,
+				991AE4861D1FCAEF001C98E4 /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

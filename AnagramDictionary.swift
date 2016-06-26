@@ -58,12 +58,7 @@ public struct AnagramDictionary: Lookup {
 
 public class AnagramBuilder {
     private var words = Words()
-    
-    public convenience init(words: Words) {
-        self.init()
-        self.words = words
-    }
-    
+
     public func addWord(word: String) {
         let hash = hashValue(word)
         var existing = words[hash] ?? []
