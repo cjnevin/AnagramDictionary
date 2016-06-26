@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99127A5D1D1FBEFD009DCF7A /* AnagramDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 99127A5C1D1FBEFD009DCF7A /* AnagramDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99127A641D1FBEFD009DCF7A /* AnagramDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99127A591D1FBEFD009DCF7A /* AnagramDictionary.framework */; };
+		99127A691D1FBEFD009DCF7A /* AnagramDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99127A681D1FBEFD009DCF7A /* AnagramDictionaryTests.swift */; };
+		99127A741D1FBF2C009DCF7A /* AnagramDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */; };
+		99127A7C1D1FBF33009DCF7A /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99127A781D1FBF33009DCF7A /* Lookup.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		99127A651D1FBEFD009DCF7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99127A501D1FBEFD009DCF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99127A581D1FBEFD009DCF7A;
+			remoteInfo = AnagramDictionary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		99127A591D1FBEFD009DCF7A /* AnagramDictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnagramDictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99127A5C1D1FBEFD009DCF7A /* AnagramDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnagramDictionary.h; sourceTree = "<group>"; };
+		99127A5E1D1FBEFD009DCF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99127A631D1FBEFD009DCF7A /* AnagramDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnagramDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99127A681D1FBEFD009DCF7A /* AnagramDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramDictionaryTests.swift; sourceTree = "<group>"; };
+		99127A6A1D1FBEFD009DCF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnagramDictionary.swift; sourceTree = SOURCE_ROOT; };
+		99127A781D1FBF33009DCF7A /* Lookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lookup.swift; path = ../Lookup/Lookup.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99127A551D1FBEFD009DCF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99127A601D1FBEFD009DCF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99127A641D1FBEFD009DCF7A /* AnagramDictionary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99127A4F1D1FBEFD009DCF7A = {
+			isa = PBXGroup;
+			children = (
+				99127A5B1D1FBEFD009DCF7A /* AnagramDictionary */,
+				99127A671D1FBEFD009DCF7A /* AnagramDictionaryTests */,
+				99127A5A1D1FBEFD009DCF7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99127A5A1D1FBEFD009DCF7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99127A591D1FBEFD009DCF7A /* AnagramDictionary.framework */,
+				99127A631D1FBEFD009DCF7A /* AnagramDictionaryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99127A5B1D1FBEFD009DCF7A /* AnagramDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				99127A5C1D1FBEFD009DCF7A /* AnagramDictionary.h */,
+				99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */,
+				99127A781D1FBF33009DCF7A /* Lookup.swift */,
+				99127A5E1D1FBEFD009DCF7A /* Info.plist */,
+			);
+			path = AnagramDictionary;
+			sourceTree = "<group>";
+		};
+		99127A671D1FBEFD009DCF7A /* AnagramDictionaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				99127A681D1FBEFD009DCF7A /* AnagramDictionaryTests.swift */,
+				99127A6A1D1FBEFD009DCF7A /* Info.plist */,
+			);
+			path = AnagramDictionaryTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		99127A561D1FBEFD009DCF7A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99127A5D1D1FBEFD009DCF7A /* AnagramDictionary.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		99127A581D1FBEFD009DCF7A /* AnagramDictionary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99127A6D1D1FBEFD009DCF7A /* Build configuration list for PBXNativeTarget "AnagramDictionary" */;
+			buildPhases = (
+				99127A541D1FBEFD009DCF7A /* Sources */,
+				99127A551D1FBEFD009DCF7A /* Frameworks */,
+				99127A561D1FBEFD009DCF7A /* Headers */,
+				99127A571D1FBEFD009DCF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnagramDictionary;
+			productName = AnagramDictionary;
+			productReference = 99127A591D1FBEFD009DCF7A /* AnagramDictionary.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		99127A621D1FBEFD009DCF7A /* AnagramDictionaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99127A701D1FBEFD009DCF7A /* Build configuration list for PBXNativeTarget "AnagramDictionaryTests" */;
+			buildPhases = (
+				99127A5F1D1FBEFD009DCF7A /* Sources */,
+				99127A601D1FBEFD009DCF7A /* Frameworks */,
+				99127A611D1FBEFD009DCF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99127A661D1FBEFD009DCF7A /* PBXTargetDependency */,
+			);
+			name = AnagramDictionaryTests;
+			productName = AnagramDictionaryTests;
+			productReference = 99127A631D1FBEFD009DCF7A /* AnagramDictionaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99127A501D1FBEFD009DCF7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = CJNevin;
+				TargetAttributes = {
+					99127A581D1FBEFD009DCF7A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					99127A621D1FBEFD009DCF7A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 99127A531D1FBEFD009DCF7A /* Build configuration list for PBXProject "AnagramDictionary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 99127A4F1D1FBEFD009DCF7A;
+			productRefGroup = 99127A5A1D1FBEFD009DCF7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99127A581D1FBEFD009DCF7A /* AnagramDictionary */,
+				99127A621D1FBEFD009DCF7A /* AnagramDictionaryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99127A571D1FBEFD009DCF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99127A611D1FBEFD009DCF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99127A541D1FBEFD009DCF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99127A741D1FBF2C009DCF7A /* AnagramDictionary.swift in Sources */,
+				99127A7C1D1FBF33009DCF7A /* Lookup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99127A5F1D1FBEFD009DCF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99127A691D1FBEFD009DCF7A /* AnagramDictionaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99127A661D1FBEFD009DCF7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99127A581D1FBEFD009DCF7A /* AnagramDictionary */;
+			targetProxy = 99127A651D1FBEFD009DCF7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		99127A6B1D1FBEFD009DCF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		99127A6C1D1FBEFD009DCF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		99127A6E1D1FBEFD009DCF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AnagramDictionary/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.AnagramDictionary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		99127A6F1D1FBEFD009DCF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AnagramDictionary/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.AnagramDictionary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		99127A711D1FBEFD009DCF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AnagramDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.AnagramDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		99127A721D1FBEFD009DCF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AnagramDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.AnagramDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99127A531D1FBEFD009DCF7A /* Build configuration list for PBXProject "AnagramDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99127A6B1D1FBEFD009DCF7A /* Debug */,
+				99127A6C1D1FBEFD009DCF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99127A6D1D1FBEFD009DCF7A /* Build configuration list for PBXNativeTarget "AnagramDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99127A6E1D1FBEFD009DCF7A /* Debug */,
+				99127A6F1D1FBEFD009DCF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99127A701D1FBEFD009DCF7A /* Build configuration list for PBXNativeTarget "AnagramDictionaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99127A711D1FBEFD009DCF7A /* Debug */,
+				99127A721D1FBEFD009DCF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99127A501D1FBEFD009DCF7A /* Project object */;
+}
