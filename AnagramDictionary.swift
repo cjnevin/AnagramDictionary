@@ -8,9 +8,6 @@
 
 import Foundation
 
-public typealias Anagrams = [String]
-public typealias Words = [String: Anagrams]
-
 internal func hashValue(word: String) -> String {
     return String(word.characters.sort())
 }
@@ -19,24 +16,13 @@ internal func hashValue(characters: [Character]) -> String {
     return String(characters.sort())
 }
 
-public struct AnagramDictionary {
+public struct AnagramDictionary: Lookup {
     private let words: Words
     
-    /// - letters: Letters to use in anagrams (including fixed letters).
-    /// - returns: Anagrams for provided the letters.
-    public subscript(letters: String) -> Anagrams? {
-        return self[Array(letters.characters)]
-    }
-    
-    /// - letters: Letters to use in anagrams (including fixed letters).
-    /// - returns: Anagrams for provided the letters.
     public subscript(letters: [Character]) -> Anagrams? {
         return words[hashValue(letters)]
     }
     
-    /// - letters: Letters to use in anagrams (including fixed letters).
-    /// - fixedLetters: Index-Character dictionary for all spots that are currently filled.
-    /// - returns: Anagrams for provided the letters where fixed letters match and remaining letters.
     public subscript(letters: [Character], fixedLetters: [Int: Character]) -> Anagrams? {
         return self[letters]?.filter({ word in
             var remainingForWord = letters
@@ -56,15 +42,8 @@ public struct AnagramDictionary {
         })
     }
     
-    /// - letters: Letters to use in anagrams (including fixed letters).
-    /// - fixedLetters: Index-Character dictionary for all spots that are currently filled.
-    /// - returns: Anagrams for provided the letters where fixed letters match and remaining letters.
-    public subscript(letters: String, fixedLetters: [Int: Character]) -> Anagrams? {
-        return self[Array(letters.characters), fixedLetters]
-    }
-    
     public func lookup(word: String) -> Bool {
-        return self[word.characters.sort()]?.contains(word) ?? false
+        return self[hashValue(word)]?.contains(word) ?? false
     }
     
     public static func deserialize(data: NSData) -> AnagramDictionary? {
