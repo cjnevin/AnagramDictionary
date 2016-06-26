@@ -24,25 +24,6 @@ public struct AnagramDictionary: Lookup {
         return words[hashValue(letters)]
     }
     
-    public subscript(letters: [Character], fixedLetters: [Int: Character]) -> Anagrams? {
-        return self[letters]?.filter({ word in
-            var remainingForWord = letters
-            for (index, char) in Array(word.characters).enumerate() {
-                if let fixed = fixedLetters[index] where char != fixed {
-                    return false
-                }
-                if let firstIndex = remainingForWord.indexOf(char) {
-                    // Remove from pool, word still appears to be valid
-                    remainingForWord.removeAtIndex(firstIndex)
-                } else {
-                    // We ran out of viable letters for this word
-                    return false
-                }
-            }
-            return true
-        })
-    }
-    
     public func lookup(word: String) -> Bool {
         return self[hashValue(word)]?.contains(word) ?? false
     }
