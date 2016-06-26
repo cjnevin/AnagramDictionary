@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Lookup
 
 internal func hashValue(word: String) -> String {
     return String(word.characters.sort())
