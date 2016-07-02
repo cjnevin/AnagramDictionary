@@ -13,12 +13,12 @@ import XCTest
 class AnagramDictionaryTests: XCTestCase {
     
     func testBuildAndLoad() {
-        let input = NSBundle(forClass: self.dynamicType).pathForResource("test", ofType: "txt")!
-        let data = try! NSString(contentsOfFile: input, encoding: NSUTF8StringEncoding)
-        let lines = data.componentsSeparatedByString("\n").sort()
+        let input = Bundle(for: self.dynamicType).pathForResource("test", ofType: "txt")!
+        let data = try! NSString(contentsOfFile: input, encoding: String.Encoding.utf8.rawValue)
+        let lines = data.components(separatedBy: "\n").sorted()
         let anagramBuilder = AnagramBuilder()
         lines.forEach { anagramBuilder.addWord($0) }
-        let output = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first! + "/output.txt"
+        let output = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first! + "/output.txt"
         XCTAssert(anagramBuilder.serialize().writeToFile(output, atomically: true))
         
         // Test build worked
@@ -34,11 +34,11 @@ class AnagramDictionaryTests: XCTestCase {
     }
     
     func testDeserializeFails() {
-        XCTAssertNil(AnagramDictionary.deserialize(NSData()))
+        XCTAssertNil(AnagramDictionary.deserialize(Data()))
     }
     
     func testInitSucceeds() {
-        XCTAssertNotNil(AnagramDictionary(filename: "test", type: "bin", bundle: NSBundle(forClass: self.dynamicType)))
+        XCTAssertNotNil(AnagramDictionary(filename: "test", type: "bin", bundle: Bundle(forClass: self.dynamicType)))
     }
     
     func testInitFailsIfInvalidBundledFile() {
@@ -50,6 +50,6 @@ class AnagramDictionaryTests: XCTestCase {
     }
     
     func testInitFailsIfInvalidBundledFileOfTypeInBundle() {
-        XCTAssertNil(AnagramDictionary(filename: "fake", type: "bin", bundle: NSBundle(forClass: self.dynamicType)))
+        XCTAssertNil(AnagramDictionary(filename: "fake", type: "bin", bundle: Bundle(forClass: self.dynamicType)))
     }
 }
