@@ -9,12 +9,12 @@
 import Foundation
 import Lookup
 
-internal func hashValue(word: String) -> String {
-    return String(word.characters.sort())
+internal func hashValue(_ word: String) -> String {
+    return String(word.characters.sorted())
 }
 
-internal func hashValue(characters: [Character]) -> String {
-    return String(characters.sort())
+internal func hashValue(_ characters: [Character]) -> String {
+    return String(characters.sorted())
 }
 
 public struct AnagramDictionary: Lookup {
@@ -24,25 +24,25 @@ public struct AnagramDictionary: Lookup {
         return words[hashValue(letters)]
     }
     
-    public func lookup(word: String) -> Bool {
+    public func lookup(_ word: String) -> Bool {
         return self[hashValue(word)]?.contains(word) ?? false
     }
     
-    public static func deserialize(data: NSData) -> AnagramDictionary? {
-        guard let words = try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Words else {
+    public static func deserialize(_ data: Data) -> AnagramDictionary? {
+        guard let words = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! Words else {
             return nil
         }
         return AnagramDictionary(words: words)
     }
     
-    public static func load(path: String) -> AnagramDictionary? {
-        guard let data = NSData(contentsOfFile: path) else {
+    public static func load(_ path: String) -> AnagramDictionary? {
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             return nil
         }
         return AnagramDictionary.deserialize(data)
     }
     
-    public init?(filename: String, type: String = "bin", bundle: NSBundle = .mainBundle()) {
+    public init?(filename: String, type: String = "bin", bundle: Bundle = .main()) {
         guard let
             anagramPath = bundle.pathForResource(filename, ofType: type),
             anagramDictionary = AnagramDictionary.load(anagramPath) else {
@@ -59,15 +59,15 @@ public struct AnagramDictionary: Lookup {
 public class AnagramBuilder {
     private var words = Words()
 
-    public func addWord(word: String) {
+    public func addWord(_ word: String) {
         let hash = hashValue(word)
         var existing = words[hash] ?? []
         existing.append(word)
         words[hash] = existing
     }
     
-    public func serialize() -> NSData {
-        return try! NSJSONSerialization.dataWithJSONObject(words, options: NSJSONWritingOptions(rawValue: 0))
+    public func serialize() -> Data {
+        return try! JSONSerialization.data(withJSONObject: words, options: JSONSerialization.WritingOptions(rawValue: 0))
     }
     
 }
