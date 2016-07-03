@@ -19,7 +19,7 @@ class AnagramDictionaryTests: XCTestCase {
         let anagramBuilder = AnagramBuilder()
         lines.forEach { anagramBuilder.addWord($0) }
         let output = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first! + "/output.txt"
-        XCTAssert(anagramBuilder.serialize().writeToFile(output, atomically: true))
+        XCTAssertNotNil(try? anagramBuilder.serialize().write(to: URL(fileURLWithPath: output), options: .atomicWrite))
         
         // Test build worked
         let dictionary = AnagramDictionary.load(output)!
@@ -38,7 +38,7 @@ class AnagramDictionaryTests: XCTestCase {
     }
     
     func testInitSucceeds() {
-        XCTAssertNotNil(AnagramDictionary(filename: "test", type: "bin", bundle: Bundle(forClass: self.dynamicType)))
+        XCTAssertNotNil(AnagramDictionary(filename: "test", type: "bin", bundle: Bundle(for: self.dynamicType)))
     }
     
     func testInitFailsIfInvalidBundledFile() {
@@ -50,6 +50,6 @@ class AnagramDictionaryTests: XCTestCase {
     }
     
     func testInitFailsIfInvalidBundledFileOfTypeInBundle() {
-        XCTAssertNil(AnagramDictionary(filename: "fake", type: "bin", bundle: Bundle(forClass: self.dynamicType)))
+        XCTAssertNil(AnagramDictionary(filename: "fake", type: "bin", bundle: Bundle(for: self.dynamicType)))
     }
 }
