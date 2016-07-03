@@ -24,7 +24,7 @@ public struct AnagramDictionary: Lookup {
         return words[hashValue(letters)]
     }
     
-    public func lookup(_ word: String) -> Bool {
+    public func lookup(word: String) -> Bool {
         return self[hashValue(word)]?.contains(word) ?? false
     }
     

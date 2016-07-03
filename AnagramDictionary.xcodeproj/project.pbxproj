@@ -23,27 +23,6 @@
 			remoteGlobalIDString = 99127A581D1FBEFD009DCF7A;
 			remoteInfo = AnagramDictionary;
 		};
-		991AE44D1D1FC184001C98E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 99127A931D1FC082009DCF7A;
-			remoteInfo = Lookup;
-		};
-		991AE44F1D1FC184001C98E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 99127A9D1D1FC082009DCF7A;
-			remoteInfo = LookupTests;
-		};
-		991AE4821D1FC92C001C98E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 99127A921D1FC082009DCF7A;
-			remoteInfo = Lookup;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +33,6 @@
 		99127A681D1FBEFD009DCF7A /* AnagramDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramDictionaryTests.swift; sourceTree = "<group>"; };
 		99127A6A1D1FBEFD009DCF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnagramDictionary.swift; sourceTree = SOURCE_ROOT; };
-		991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lookup.xcodeproj; path = Lookup/Lookup.xcodeproj; sourceTree = SOURCE_ROOT; };
 		991AE4851D1FCAEF001C98E4 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		991AE4871D1FD028001C98E4 /* test.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = test.bin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +79,6 @@
 			children = (
 				99127A5C1D1FBEFD009DCF7A /* AnagramDictionary.h */,
 				99127A731D1FBF2C009DCF7A /* AnagramDictionary.swift */,
-				991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */,
 				99127A5E1D1FBEFD009DCF7A /* Info.plist */,
 			);
 			path = AnagramDictionary;
@@ -116,15 +93,6 @@
 				99127A6A1D1FBEFD009DCF7A /* Info.plist */,
 			);
 			path = AnagramDictionaryTests;
-			sourceTree = "<group>";
-		};
-		991AE4491D1FC184001C98E4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				991AE44E1D1FC184001C98E4 /* Lookup.framework */,
-				991AE4501D1FC184001C98E4 /* LookupTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +121,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				991AE4831D1FC92C001C98E4 /* PBXTargetDependency */,
 			);
 			name = AnagramDictionary;
 			productName = AnagramDictionary;
@@ -185,12 +152,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CJNevin;
 				TargetAttributes = {
 					99127A581D1FBEFD009DCF7A = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					99127A621D1FBEFD009DCF7A = {
 						CreatedOnToolsVersion = 7.3;
@@ -208,12 +176,6 @@
 			mainGroup = 99127A4F1D1FBEFD009DCF7A;
 			productRefGroup = 99127A5A1D1FBEFD009DCF7A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 991AE4491D1FC184001C98E4 /* Products */;
-					ProjectRef = 991AE4481D1FC184001C98E4 /* Lookup.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				99127A581D1FBEFD009DCF7A /* AnagramDictionary */,
@@ -221,23 +183,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		991AE44E1D1FC184001C98E4 /* Lookup.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Lookup.framework;
-			remoteRef = 991AE44D1D1FC184001C98E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		991AE4501D1FC184001C98E4 /* LookupTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = LookupTests.xctest;
-			remoteRef = 991AE44F1D1FC184001C98E4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		99127A571D1FBEFD009DCF7A /* Resources */ = {
@@ -283,11 +228,6 @@
 			target = 99127A581D1FBEFD009DCF7A /* AnagramDictionary */;
 			targetProxy = 99127A651D1FBEFD009DCF7A /* PBXContainerItemProxy */;
 		};
-		991AE4831D1FC92C001C98E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Lookup;
-			targetProxy = 991AE4821D1FC92C001C98E4 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -309,7 +249,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -329,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -358,7 +297,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -372,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,6 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.AnagramDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -439,6 +378,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cjnevin.AnagramDictionaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
